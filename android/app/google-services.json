@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "284690007526",
+    "project_id": "bloc-b5390",
+    "storage_bucket": "bloc-b5390.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284690007526:android:69d7d367f83fecb4c14227",
+        "android_client_info": {
+          "package_name": "com.example.bloc_sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284690007526-rs6hj50n7gh5nr1asie5mv1k8dfp29pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfNCS1yFo0pEKGTj5V-MDxOu6B9K0kCUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284690007526-rs6hj50n7gh5nr1asie5mv1k8dfp29pq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
