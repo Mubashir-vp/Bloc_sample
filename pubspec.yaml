@@ -29,11 +29,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  hydrated_bloc:
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  path_provider: ^2.0.9
 
 dev_dependencies:
   flutter_test:
@@ -43,6 +45,11 @@ dev_dependencies:
   firebase_auth: ^3.3.4
   firebase_core: ^1.10.6
   flutter_otp_text_field: ^1.0.0
+  build_runner:
+  json_serializable: ^6.1.4
+  json_annotation: ^4.4.0
+
+
 
 
 

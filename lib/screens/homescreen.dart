@@ -127,6 +127,12 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             appBar: AppBar(
+              leading: IconButton(
+                onPressed: () {},
+                icon:const Icon(
+                  Icons.add,
+                ),
+              ),
               actions: [
                 IconButton(
                     onPressed: () {

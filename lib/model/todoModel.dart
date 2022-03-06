@@ -1,5 +1,17 @@
+import 'dart:convert';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:json_annotation/json_annotation.dart';
+import 'package:meta/meta.dart';
+part 'todoModel.g.dart';
+Todo todoFromJson(String str) => Todo.fromJson(json.decode(str));
+
+String todoToJson(Todo data) => json.encode(data.toJson());
+
+@JsonSerializable()
+
+
 
 class Todo extends Equatable {
   final String id;
@@ -11,8 +23,9 @@ class Todo extends Equatable {
       {required this.id,
       required this.task,
       required this.description,
-       this.isCancelled,
-       this.isCompleted});
+      this.isCancelled,
+      this.isCompleted
+      });
   Todo copyWith(
       {String? id,
       String? task,
@@ -50,4 +63,21 @@ class Todo extends Equatable {
       task: 'Study Getx',
     )
   ];
+
+    factory Todo.fromJson(Map<String, dynamic> json) => Todo(
+        id: json["id"],
+        description: json["description"],
+        isCompleted: json["isCompleted"],
+        isCancelled: json["isCancelled"],
+        task: json["task"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "id": id,
+        "description": description,
+        "isCompleted": isCompleted,
+        "isCancelled": isCancelled,
+        "task": task,
+    };
 }
+

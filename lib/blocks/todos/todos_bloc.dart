@@ -1,13 +1,29 @@
-import 'package:bloc/bloc.dart';
+import 'dart:developer';
+import 'package:bloc_sample/model/todoModel.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:json_annotation/json_annotation.dart';
+
 import 'package:meta/meta.dart';
-
 import '../../model/todoModel.dart';
-
 part 'todos_event.dart';
-
 part 'todos_state.dart';
 
 class TodosBloc extends Bloc<TodosEvent, TodosState> {
+  // @override
+  // TodosState? fromJson(Map<String, dynamic> json) {
+  //   TodosState.f
+  // }
+
+  // @override
+  // Map<String, dynamic>? toJson(TodosState state) {
+  //   return state.toMap();
+  // }
+
+  // @override
+  // TodosState get initialState {
+  //   return super.initialState ?? TodosState();
+  // }
+
   TodosBloc()
       : super(
           TodosState(),
@@ -70,4 +86,12 @@ class TodosBloc extends Bloc<TodosEvent, TodosState> {
       emit(TodosLoaded(todos: todos));
     }
   }
+ 
+
+
+  // @override
+  // TodosLoaded? fromJson(Map<String, dynamic> json) => json['value'];
+
+  // @override
+  // Map<String, dynamic>? toJson(TodosState state) => {'value': state};
 }
