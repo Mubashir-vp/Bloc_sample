@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class Login extends StatelessWidget {
-  Login({
+class LoginUsingPhone extends StatelessWidget {
+  LoginUsingPhone({
     Key? key,
   }) : super(
           key: key,
