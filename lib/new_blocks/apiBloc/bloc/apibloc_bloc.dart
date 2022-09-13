@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:bloc_sample/model/memeModel.dart';
+import 'package:bloc_sample/services/api_services.dart';
 import 'package:meta/meta.dart';
 import 'dart:developer';
 
@@ -10,6 +11,7 @@ import 'package:bloc_sample/blocks/todos/todos_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 import 'package:http/http.dart' as mubs;
+import '../../../model/weatherModel.dart';
 import '/model/todoModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 part 'apibloc_event.dart';
@@ -23,20 +25,9 @@ class ApiblocBloc extends Bloc<ApiblocEvent, ApiblocState> {
     LoadData event,
     Emitter<ApiblocState> emit,
   ) async {
-    const url = "https://api.imgflip.com/get_memes";
-    var pathUrl = Uri.parse(url);
     try {
-      var response = await mubs.get(
-        pathUrl,
-      );
-      log("dataaaaaaaa${response.body}");
-      log("${response.statusCode}");
-      if (response.statusCode == 200) {
-        String responseString = response.body;
-        MemeModel data = memeModelFromJson(responseString);
-        emit(DataLoaded(meme: data));
-        // return memeModelFromJson(responseString);
-      }
+   var data=await ApiServices().loadData();
+        emit(DataLoaded(weather: data));
     } on SocketException {
       emit(const ErrorState(errorMessage: "Network Error"));
     } catch (e) {

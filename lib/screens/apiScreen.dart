@@ -75,9 +75,17 @@ class ApiScreen extends StatelessWidget {
                         BuildContext context,
                         index,
                       ) {
-                        var data = state.meme;
-                        return SizedBox(
-                          child: Image.network(data.data!.memes![index].url!),
+                        return Column(
+                          children: [
+                            SizedBox(
+                              child: Text(state.weather.main!.humidity.toString()
+                              ),
+                            ),
+                             SizedBox(
+                              child: Text(state.weather.
+                              main!.temp.toString()),
+                            ),
+                          ],
                         );
                       },
                       separatorBuilder: (
@@ -88,7 +96,7 @@ class ApiScreen extends StatelessWidget {
                           height: 14,
                         );
                       },
-                      itemCount: state.meme.data!.memes!.length,
+                      itemCount:10,
                     ),
                   );
                 } else if (state is ErrorState) {

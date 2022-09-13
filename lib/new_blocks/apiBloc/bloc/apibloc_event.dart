@@ -8,8 +8,8 @@ abstract class ApiblocEvent {
 
 }
 class LoadData extends ApiblocEvent {
-   final List<MemeModel> meme;
- const LoadData({this.meme=const <MemeModel>[]} );
+   final Weather? meme;
+ const LoadData({this.meme} );
  @override
-  List<Object> get props => [meme];
+  List<Object> get props => [meme!];
 }

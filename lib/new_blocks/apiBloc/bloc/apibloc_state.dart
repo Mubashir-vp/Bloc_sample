@@ -10,10 +10,10 @@ abstract class ApiblocState extends Equatable {
 class DataLoading extends ApiblocState {}
 
 class DataLoaded extends ApiblocState {
-  final MemeModel meme;
-  const DataLoaded({required this.meme});
+  final Weather weather;
+  const DataLoaded({required this.weather});
   @override
-  List<Object> get props => [meme];
+  List<Object> get props => [weather];
 }
 
 class ErrorState extends ApiblocState {
